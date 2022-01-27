@@ -40,7 +40,7 @@ def upload():
         else:
             print("error")
     except:
-        pass
+        return "<h1>Please select a valid file</h1>"
 
 
 @app.route("/upload_mul", methods=['POST'])
@@ -60,7 +60,7 @@ def mul():
         return send_file(output, download_name="Uml_diagram.png", as_attachment=True)
 
     except:
-        pass
+        return "<h1>Please select valid files</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
