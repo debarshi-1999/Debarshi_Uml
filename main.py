@@ -64,6 +64,9 @@ def uploadone():
     os.system("python sourceInject.py")
     os.system("python -m plantuml SD")
     os.remove(temp)
+    file_dir = os.path.dirname(os.path.abspath('temp.py'))
+    print(file_dir)
+#     return send_from_directory(output_dir, path='image1.jpg', as_attachment=True)
     return send_file(os.path.abspath('SD.png'), download_name="Sequence_diagram.png", as_attachment=True)
 
 
