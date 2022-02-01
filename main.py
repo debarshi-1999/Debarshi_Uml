@@ -14,6 +14,10 @@ def hello():
     return render_template("home.html")
 
 
+@app.route("/download_image")
+def down():
+    return send_file(os.path.abspath('image1.jpg'), download_name="output.jpg", as_attachment=True)
+
 @app.route("/converter")
 def converter():
     return render_template("Dashboard.html")
