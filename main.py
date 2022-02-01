@@ -56,7 +56,7 @@ def uploadone():
     os.system("python sourceInject.py")
     os.system("python -m plantuml SD")
     os.remove(temp)
-    return send_file("SD.png", download_name="Sequence_diagram.png", as_attachment=True)
+    return send_file(os.path.abspath('SD.png'), download_name="Sequence_diagram.png", as_attachment=True)
 
 
 @app.route("/upload_mul", methods=['POST'])
@@ -70,9 +70,9 @@ def mul():
             file.close()
     path = os.path.abspath(temp)
     os.system("pyreverse -o png " + path)
-    output = "classes.png"
+    #output = "classes.png"
     os.remove(temp)
-    return send_file(output, download_name="Uml_diagram", as_attachment=True)
+    return send_file(os.path.abspath('classes.png'), download_name="Uml_diagram", as_attachment=True)
 
 
 # @app.route("/upload", methods=['POST'])
