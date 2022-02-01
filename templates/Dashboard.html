@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Dashboard.css')}}">
+    <link rel="icon" href="{{url_for('static',filename='/images/image1.jpg')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- navbar -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <div class="dropdown">
+      <button class="dropbtn">Services
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/">Uml Generator</a>
+        <a href="/converter">Pdf to Dox converter</a>
+      </div>
+    </div>
+  </div>
+<!-- navbar ends -->
+<div class="main">
+    <div class="content">
+        <h1>PDF to DOCX Converter</h1>
+        <p>
+            <form action="/upload" enctype="multipart/form-data" method="POST">
+            <div class="op">
+                <select name="op1">
+                    <option>PDF</option>
+                    <option>DOCX</option>
+                </select>
+                <span>to</span>
+                <select name="op2">
+                    <option>DOCX</option>
+                    <option>PDF</option>
+                </select>
+            </div>
+            <p>
+                <input type="file" name="file">
+            </p>
+            <p>
+                <button type="submit" class="btn">Download</button>
+            </p>
+            </form>
+        </p>
+    </div>
+</div>
+</body>
+</html>
