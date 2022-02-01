@@ -17,9 +17,9 @@ def hello():
 @app.route("/download_image")
 def down():
 #     return send_file(os.path.abspath('image1.jpg'), download_name="output.jpg", as_attachment=True)
-        file_dir = os.path.dirname(os.path.abspath('image1.jpg'))
-        par_dir = os.path.join(file_dir, os.pardir)
-        output_dir = os.path.join(par_dir, 'images')
+    file_dir = os.path.dirname(os.path.abspath('image1.jpg'))
+    par_dir = os.path.join(file_dir, os.pardir)
+    output_dir = os.path.join(par_dir, 'images')
     return send_from_directory(output_dir, filename='image1.jpg', as_attachment=True)
 
 @app.route("/converter")
