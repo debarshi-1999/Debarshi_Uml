@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, send_from_directory
 import os
 from io import BytesIO
 # from pdf2docx import parse
@@ -16,7 +16,8 @@ def hello():
 
 @app.route("/download_image")
 def down():
-    return send_file(os.path.abspath('image1.jpg'), download_name="output.jpg", as_attachment=True)
+#     return send_file(os.path.abspath('image1.jpg'), download_name="output.jpg", as_attachment=True)
+    return send_from_directory(os.path.abspath('image1.jpg'), filename='image1.jpg', as_attachment=True)
 
 @app.route("/converter")
 def converter():
