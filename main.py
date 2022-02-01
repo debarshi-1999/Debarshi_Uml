@@ -83,7 +83,8 @@ def mul():
     os.system("pyreverse -o png " + path)
     #output = "classes.png"
     os.remove(temp)
-    return send_file(os.path.abspath('classes.png'), download_name="Uml_diagram", as_attachment=True)
+    file_dir = os.path.dirname(os.path.abspath('classes.png'))
+    return send_file(os.path.join(file_dir, 'classes.png'), download_name="Uml_diagram", as_attachment=True)
 
 
 # @app.route("/upload", methods=['POST'])
